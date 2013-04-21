@@ -1,0 +1,83 @@
+1era consigna:
+Chicos a partir del programa python elaborado en la última clase modificarlo completamente para que el Título diga "Carga de Productos" y que solicite el código de barra , la descripción, el rubro, el costo y el precio, al final del mismo debe imprimir algo como esto:
+FICHA DEL PRODUCTO
+Codigo: xxxxxxxx
+Descripcion: xxxxxxxxxxxx
+Rubro: xxxxxxxxxx
+costo de compra: xxxxxxxx
+Precio al publico: xxxxxxxx
+
+2da consigna:
+Modificar el programa para que imprima lo siguiente
+
+FICHA DEL PRODUCTO
+Codigo: xxxxxxxx 
+Descripcion: xxxxxxxxxxxx Rubro: xxxxxxxxxx
+costo de compra: xxxxxxxx Precio al publico: xxxxxxxx
+Ganancia por unidad vendida:xxxxxxxxxxxx
+
+3ra consigna:
+Modificar el programa para que pregunte, luego de la impresión de la ficha del producto, el porcentaje de descuento por pago contado, y que imprima el dinero descontado y el importe final por pago contado.
+ 
+FICHA DEL PRODUCTO
+Codigo: xxxxxxxx 
+Descripcion: xxxxxxxxxxxx Rubro: xxxxxxxxxx
+costo de compra: xxxxxxxx Precio al publico: xxxxxxxx
+Ganancia por unidad vendida:xxxxxxxxxxxx
+
+Ingrese porcentaje de descuento:xx
+
+Descuento por pago contado:xx
+Importe final por pago contado:xx
+
+
+(NO USEN ACENTOS DENTRO DEL PROGRAMA POR AHORA)
+(el jueves haganmé acordar que usemos una pistola de barra del instituto para probarla con el programa)
+(Como no les pido operaciones matemáticas pueden mantener todo como string)
+
+
+print "CARGA DE PRODUCTOS"
+codigo=raw_input("Ingrese Codigo:")
+descripcion=raw_input("Ingrese Descripcion:")
+rubro=raw_input("Ingrese Rubro:")
+costo_de_compra=raw_input("Ingrese el Costo:")
+precio_al_publico=raw_input("Ingrese el Precio al publico:")
+
+ganancia=float(precio_al_publico) - float(costo_de_compra)
+
+print "FICHA DEL PRODUCTO" 
+print "codigo "+codigo
+print "descripcion "+ descripcion,"rubro "+ rubro
+print "Costo de compra: "+costo_de_compra, "Precio al publico: "+precio_al_publico
+print "Ganancia Por Unidad Vendida en $ %0.2f:" % ganancia  #Corregi para que solo muestre dos lugares luego de la coma
+
+#Tercera consigna
+
+desc=float(raw_input("\nIngrese porcentaje de descuento: "))
+print "\nDescuento por pago contado: $%0.2f" %(float(precio_al_publico)*desc/100)
+print "Importe final por pago contado: $%0.2f" %(float(precio_al_publico)-(float(precio_al_publico)*desc/100))
+
+
+1er aporte: Emiliano Ferrero
+Revisión y comentarios: pedí modificar el código del primer programa, no escribir uno nuevo, el uso de tabulaciones con los 4 puntos es necesario cuando escribimos una estructura de control como un if, while, for etc..
+2do aporte:Charly 
+Revisión y comentarios: la consigna está parcialmente bien, faltó hacer que descripción y rubro se impriman en el mismo renglón  ademas que costo de compra y precio al publico también se impriman en el mismo renglón. Otra cuestión es que me gustaría que siempre el código quede lo mas limpio y entendible, digo esto porque preferiría que el cálculo de ganancia se haga en una linea anterior armando un variable "ganancia" para luego imprimirla
+3er aporte: Alexis Brillada
+Revisión y comentarios: está bien el ajuste que hiciste para lograr que los datos se impriman en el mismo renglon, tenías 2 alternativas más que podrías haber utilizado:
+* una de ellas era utilizar simplemente el signo (+) colocando "texto:"+variable+" texto:"+variable
+* la otra era utilizar el signo (%) que vimos en clase que se utiliza para colocar muchas variables y concatenarlas
+Vos utilizaste la coma para separar algunas variables o textos, es también posible, funciona y está bien.
+Lo "preocupante" es que no utilizaste correctamente la instrucción print
+La sintaxis de la misma es: print [texto,] variable
+Donde [texto] es opcional y es básicamente la leyenda que aparece a la izquierda de la impresión de la variable, es decir, si no colocamos el texto solo saldría un número impreso en pantalla y no habría ninguna pista que nos diga que es lo que representa ese número.
+Lo preocupante es que, como [texto] colocaste el nombre de la variable, eso es mostrarle al usuario parte de nuestra programación, eso no es correcto.
+Concretamente:
+- Vos escribiste
+print "costo_de_compra "+costo_de_compra, "precio_al_publico "+precio_al_publico
+- Deberías haber puesto
+print "Costo de compra:"+costo_de_compra, "   Precio al publico: "+precio_al_publico
+
+El último error fue mantener el código anterior y hacer una especie de nuevo programa, yo expliqué que debían modificar el anterior no sumar nuevas lineas, dado que sino se haría enorme y costaría entenderlo.
+
+4to aporte: KiKi
+Revisión y comentarios: Es correcto lo que haces pero mantenes el error de Alexis porque yo no se lo había corregido. Siempre esperen a mi corrección para sumar sus cambios sino la experiencia se nos hace más dificil de entender y suma "complejidad" para el seguimiento
